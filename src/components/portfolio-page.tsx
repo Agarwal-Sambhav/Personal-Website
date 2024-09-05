@@ -6,23 +6,21 @@ import { Github, ExternalLink, Mail, Linkedin, Instagram, ChevronRight, Sun, Moo
 // import headshot from 'src/app/assets/headshot.jpg';
 
 const technologies = [
-  { name: 'React', icon: '/placeholder.svg' },
-  { name: 'Node.js', icon: '/placeholder.svg' },
-  { name: 'TensorFlow', icon: '/placeholder.svg' },
-  { name: 'SQL', icon: '/placeholder.svg' },
-  { name: 'Spring', icon: '/placeholder.svg' },
-  { name: 'Python', icon: '/placeholder.svg' },
-  { name: 'Git', icon: '/placeholder.svg' },
-  { name: 'Google Cloud', icon: '/placeholder.svg' },
-  { name: 'Firebase', icon: '/placeholder.svg' },
-  { name: 'Docker', icon: '/placeholder.svg' },
-  { name: 'Turborepo', icon: '/placeholder.svg' },
-  { name: 'Java', icon: '/placeholder.svg' },
-  { name: 'AWS', icon: '/placeholder.svg' },
-  { name: 'HTML', icon: '/placeholder.svg' },
-  { name: 'CSS', icon: '/placeholder.svg' },
-  { name: 'JavaScript', icon: '/placeholder.svg' },
-]
+  { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/react.svg' },
+  { name: 'Node.js', icon: 'https://simpleicons.org/icons/nodedotjs.svg' },
+  { name: 'SQL', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/sqlite.svg' },
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/python.svg' },
+  { name: 'Git', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/git.svg' },
+  { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/firebase.svg' },
+  { name: 'Flask', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/flask.svg' },
+  { name: 'Java', icon: 'https://simpleicons.org/icons/javascript.svg' },
+  { name: 'HTML', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/html5.svg' },
+  { name: 'CSS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/css3.svg' },
+  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/javascript.svg' },
+  { name: 'C++', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/cplusplus.svg' },
+];
+
+
 
 export function PortfolioPage() {
   const [activeSection, setActiveSection] = useState('home')
@@ -128,15 +126,15 @@ export function PortfolioPage() {
             </div>
             <div className="mt-12">
               <h3 className="text-2xl font-semibold mb-6">Technologies I work with</h3>
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-6  ">
                 {technologies.map((tech, index) => (
                   <motion.div
                     key={index}
-                    className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'} rounded-full p-3 flex items-center`}
+                    className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-300'} rounded-full p-3 flex items-center`}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <img src={tech.icon} alt={tech.name} className="w-8 h-8 mr-2" />
+                    <img src={tech.icon} alt={tech.name} className="w-8 h-8 mr-2 filter invert sepia saturate-100 hue-rotate-5" />
                     <span className="text-sm">{tech.name}</span>
                   </motion.div>
                 ))}
