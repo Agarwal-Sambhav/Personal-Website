@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Mail, Linkedin, Instagram, ChevronRight, Sun, Moon, Phone} from 'lucide-react';
+import DownArrow from '../components/DownArrow'
 // import headshot from 'src/app/assets/headshot.jpg';
 
 const technologies = [
@@ -83,15 +84,22 @@ export function PortfolioPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                
                 See my experience <ChevronRight className="ml-2" size={24} />
               </motion.a>
+              
             </div>
-            <div className="md:w-1/2 flex justify-center">
+            
+            <div className="md:w-1/2 flex justify-center ">
               <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.43.58%E2%80%AFPM-8qvqzZBDBoOGWxKG3um34yo0F6Reli.png" alt="3D Cube" className="w-96 h-96 object-contain" />
             </div>
+            
           </div>
+          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+              <DownArrow />
+            </div>
         </section>
-
+        
         <section id="about" className="py-20 px-6">
           <div className="max-w-4xl mx-auto">
             <div className="w-24 h-1 bg-blue-400 mb-8"></div>
