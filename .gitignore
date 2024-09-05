@@ -1,9 +1,11 @@
 # Node.js dependencies
 node_modules/
+
+# Next.js build output
 .next/
+!.next/static/
 
 # Output of `next build`
-.next/
 out/
 
 # Environment variables
@@ -23,11 +25,10 @@ yarn-error.log*
 # Build artifacts
 dist/
 .build/
-.DS_Store
 
 # OS or editor-specific files
-Thumbs.db
 .DS_Store
+Thumbs.db
 
 # IDE or editor specific files
 .vscode/
@@ -44,20 +45,6 @@ yarn.lock
 
 # If you use pnpm
 pnpm-lock.yaml
-
-# MacOS folder attributes
-.AppleDouble
-.LSOverride
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
 
 # Temporary files
 *.swp

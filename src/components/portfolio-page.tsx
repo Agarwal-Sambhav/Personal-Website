@@ -38,7 +38,13 @@ export function PortfolioPage() {
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
       <header className={`fixed top-0 left-0 right-0 z-50 ${theme === 'dark' ? 'bg-gray-900 bg-opacity-90' : 'bg-white bg-opacity-90'} backdrop-blur-sm`}>
-        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+        
+      <motion.nav
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 5, y: 20 }}
+          transition={{ duration: 2 }}
+          className="container mx-auto px-6 py-4 flex justify-between items-center"
+        >
           <div className="flex space-x-6">
             <a href="#about" className={`hover:text-blue-400 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>About</a>
             <a href="#experience" className={`hover:text-blue-400 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Experience</a>
@@ -65,40 +71,54 @@ export function PortfolioPage() {
               <Instagram size={24} />
             </a>
           </div>
-        </nav>
+        </motion.nav>
+
+
       </header>
 
       <main className="pt-20">
-        <section id="home" className="min-h-screen flex items-center justify-center px-6">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-1/2 mb-8 md:mb-0 pr-8">
-              <h1 className="text-6xl font-bold mb-4">
-                Hey there! I'm
-                <br />
-                <span className="text-blue-400 text-7xl">Sambhav Agarwal</span>
-              </h1>
-              <p className="text-2xl mb-8">I like creating apps, websites, and AI models</p>
-              <motion.a
-                href="#experience"
-                className="inline-flex items-center bg-blue-500 text-white px-8 py-4 rounded-full hover:bg-blue-600 transition-colors text-xl"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                
-                See my experience <ChevronRight className="ml-2" size={24} />
-              </motion.a>
-              
-            </div>
-            
-            <div className="md:w-1/2 flex justify-center ">
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.43.58%E2%80%AFPM-8qvqzZBDBoOGWxKG3um34yo0F6Reli.png" alt="3D Cube" className="w-96 h-96 object-contain" />
-            </div>
-            
-          </div>
-          <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
-              <DownArrow />
-            </div>
-        </section>
+      <section id="home" className="min-h-screen flex items-center justify-center px-6">
+    <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <motion.div
+        className="md:w-1/2 mb-8 md:mb-0 pr-8"
+        initial={{ opacity: 0, x: -150 }}
+        animate={{ opacity: 2, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-6xl font-bold mb-4">
+          Hey there! I'm
+          <br />
+          <span className="text-blue-400 text-7xl">Sambhav Agarwal</span>
+        </h1>
+        <p className="text-2xl mb-8">I like creating apps, websites, and AI models</p>
+        <motion.a
+          href="#experience"
+          className="inline-flex items-center bg-blue-500 text-white px-8 py-4 rounded-full hover:bg-blue-600 transition-colors text-xl"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          See my experience <ChevronRight className="ml-2" size={24} />
+        </motion.a>
+      </motion.div>
+
+      <motion.div
+        className="md:w-1/2 flex justify-center"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.43.58%E2%80%AFPM-8qvqzZBDBoOGWxKG3um34yo0F6Reli.png"
+          alt="3D Cube"
+          className="w-96 h-96 object-contain"
+        />
+      </motion.div>
+    </div>
+
+    <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+      <DownArrow />
+    </div>
+  </section>
         
         <section id="about" className="py-20 px-6">
           <div className="max-w-4xl mx-auto">
@@ -123,6 +143,7 @@ export function PortfolioPage() {
                   friends and family. I also really like playing table tennis, and played for a few
                   years. I'm down for a game at anytime of the day!
                 </p>
+               
               </div>
               <motion.img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.40.55%E2%80%AFPM-YIfQajt8BEfHzKxqtIyn96qDPapCVt.png"
@@ -148,7 +169,10 @@ export function PortfolioPage() {
                 ))}
               </div>
             </div>
+
+            
           </div>
+        
         </section>
 
         <section id="experience" className={`py-20 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
