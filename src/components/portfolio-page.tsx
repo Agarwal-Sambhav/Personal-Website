@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Mail, Linkedin, Instagram, ChevronRight, Sun, Moon, Phone} from 'lucide-react';
 import DownArrow from '../components/DownArrow'
-// import headshot from 'src/app/assets/headshot.jpg';
+import headshot from '../app/assets/headshot.jpg';
+import laptop from '../app/assets/laptop.jpg';
 
 const technologies = [
   { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/react.svg' },
@@ -19,6 +20,7 @@ const technologies = [
   { name: 'CSS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/css3.svg' },
   { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/javascript.svg' },
   { name: 'C++', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/cplusplus.svg' },
+  { name: 'Django', icon: 'https://simpleicons.org/icons/django.svg' },
 ];
 
 
@@ -108,9 +110,10 @@ export function PortfolioPage() {
         transition={{ duration: 0.5 }}
       >
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.43.58%E2%80%AFPM-8qvqzZBDBoOGWxKG3um34yo0F6Reli.png"
+          src={headshot.src}
           alt="3D Cube"
-          className="w-96 h-96 object-contain"
+          className="w-96 h-96 object-cover rounded-full border-4  border-blue-400"
+          
         />
       </motion.div>
     </div>
@@ -120,60 +123,74 @@ export function PortfolioPage() {
     </div>
   </section>
         
-        <section id="about" className="py-20 px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="w-24 h-1 bg-blue-400 mb-8"></div>
-            <h2 className="text-4xl font-bold text-blue-400 mb-8">About Me</h2>
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-              <div className="md:w-2/3">
-                <p className="mb-4 text-lg">
-                  Hey! I'm Sambhav Agarwal, and I'm currently pursuing a Bachelor's Degree of
-                  Science in Computer Science at the University of California, Davis. Last
-                  summer, I was a Software Engineering Intern at GalaxySDK, a startup based in
-                  San Francisco.
-                </p>
-                <p className="mb-4 text-lg">
-                  My favorite part of programming is creating apps and websites, like this one! I
-                  love the whole process of taking an idea from ideation to design to production.
-                  I also find competitive programming pretty fun. Finally, I love using AI models
-                  to solve interesting and complex problems.
-                </p>
-                <p className="text-lg">
-                  Outside of programming, I love a good day outdoors. I often go out with
-                  friends and family. I also really like playing table tennis, and played for a few
-                  years. I'm down for a game at anytime of the day!
-                </p>
-               
-              </div>
-              <motion.img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.40.55%E2%80%AFPM-YIfQajt8BEfHzKxqtIyn96qDPapCVt.png"
-                alt="Sambhav Agarwal"
-                className="rounded-full w-64 h-64 object-cover border-4 border-blue-400"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-            <div className="mt-12">
-              <h3 className="text-2xl font-semibold mb-6">Technologies I work with</h3>
-              <div className="flex flex-wrap gap-6  ">
-                {technologies.map((tech, index) => (
-                  <motion.div
-                    key={index}
-                    className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-300'} rounded-full p-3 flex items-center`}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img src={tech.icon} alt={tech.name} className="w-8 h-8 mr-2 filter invert sepia saturate-100 hue-rotate-5" />
-                    <span className="text-sm">{tech.name}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+  <section id="about" className="py-20 px-6 flex justify-center items-center">
+  <motion.div
+    className="max-w-4xl mx-auto"
+    initial={{ opacity: 0, x: -150 }}
+    whileInView={{ opacity: 2, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 3 }}
+  >
+    <div className="w-24 h-1 bg-blue-400 mb-8"></div>
+    <h2 className="text-4xl font-bold text-blue-400 mb-8 text-center">About Me</h2>
+    <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+      <div className="md:w-2/3">
+        <p className="mb-4 text-lg">
+          Hey! I'm Sambhav Agarwal, and I'm currently pursuing a Bachelor's Degree of
+          Science in Computer Science at the University of California, Davis. Last
+          summer, I was a Software Engineering Intern at GalaxySDK, a startup based in
+          San Francisco.
+        </p>
+        <p className="mb-4 text-lg">
+          My favorite part of programming is creating apps and websites, like this one! I
+          love the whole process of taking an idea from ideation to design to production.
+          I also find competitive programming pretty fun. Finally, I love using AI models
+          to solve interesting and complex problems.
+        </p>
+        <p className="text-lg">
+          Outside of programming, I love a good day outdoors. I often go out with
+          friends and family. I also really like playing table tennis, and played for a few
+          years. I'm down for a game at any time of the day!
+        </p>
+      </div>
 
-            
-          </div>
-        
-        </section>
+      {/* Image inside the flex container */}
+      <motion.img
+        src={headshot.src}
+        alt="Sambhav Agarwal"
+        className="rounded-full w-80 h-80 object-cover border-4 border-blue-400"
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.5 }}
+      />
+    </div>
+
+    {/* Technologies section */}
+    <div className="mt-12">
+      <h3 className="text-2xl font-semibold mb-6 text-center">Technologies I work with</h3>
+      <div className="flex flex-wrap gap-6 justify-center">
+        {technologies.map((tech, index) => (
+          <motion.div
+            key={index}
+            className={`${
+              theme === 'dark' ? 'bg-gray-800' : 'bg-gray-300'
+            } rounded-full p-3 flex items-center`}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img
+              src={tech.icon}
+              alt={tech.name}
+              className="w-8 h-8 mr-2 filter invert sepia saturate-100 hue-rotate-5"
+            />
+            <span className="text-sm">{tech.name}</span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+</section>
+
+
 
         <section id="experience" className={`py-20 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
           <div className="max-w-4xl mx-auto">
@@ -209,55 +226,99 @@ export function PortfolioPage() {
           </div>
         </section>
 
-        <section id="projects" className="py-20 px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-blue-400 mb-12">Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                { title: 'Handscript', description: 'A web app that helps users learn American Sign Language with real time translation, instruction, and feedback.', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.41.15%E2%80%AFPM-WbFHtmRSYnOCzYhWOA551bMayA8uOi.png', technologies: ['Tensorflow', 'React.js', 'AWS', 'Flask'] },
-                { title: 'Chatter', description: 'A real-time chat application with features like user authentication, message encryption, and group chats.', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.41.15%E2%80%AFPM-WbFHtmRSYnOCzYhWOA551bMayA8uOi.png', technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'] },
-              ].map((project, index) => (
-                <motion.div
-                  key={index}
-                  className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} rounded-lg overflow-hidden shadow-lg`}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-2xl font-semibold text-blue-400 mb-2">{project.title}</h3>
-                    <p className={`mb-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className={`${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-200'} text-sm rounded-full px-3 py-1`}>{tech}</span>
-                      ))}
-                    </div>
-                    <div className="flex gap-4">
-                      <motion.a
-                        href="#"
-                        className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                        whileHover={{ scale: 1.1 }}
+        <section id="projects" className="py-20 px-6 flex justify-center items-center">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 3 }}
+            >
+              <h2 className="text-4xl font-bold text-blue-400 mb-12 text-center">Projects</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  {
+                    title: 'Handscript',
+                    description:
+                      'A web app that helps users learn American Sign Language with real time translation, instruction, and feedback.',
+                    image:
+                      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.41.15%E2%80%AFPM-WbFHtmRSYnOCzYhWOA551bMayA8uOi.png',
+                    technologies: ['Tensorflow', 'React.js', 'AWS', 'Flask'],
+                  },
+                  {
+                    title: 'Chatter',
+                    description:
+                      'A real-time chat application with features like user authentication, message encryption, and group chats.',
+                    image:
+                      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.41.15%E2%80%AFPM-WbFHtmRSYnOCzYhWOA551bMayA8uOi.png',
+                    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
+                  },
+                ].map((project, index) => (
+                  <motion.div
+                    key={index}
+                    className={`${
+                      theme === 'dark' ? 'bg-gray-800' : 'bg-white'
+                    } rounded-lg overflow-hidden shadow-lg`}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <h3 className="text-2xl font-semibold text-blue-400 mb-2">{project.title}</h3>
+                      <p
+                        className={`mb-4 ${
+                          theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                        }`}
                       >
-                        <Github size={24} />
-                      </motion.a>
-                      <motion.a
-                        href="#"
-                        className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <ExternalLink size={24} />
-                      </motion.a>
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className={`${
+                              theme === 'dark' ? 'bg-gray-700' : 'bg-gray-200'
+                            } text-sm rounded-full px-3 py-1`}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex gap-4">
+                        <motion.a
+                          href="#"
+                          className={`${
+                            theme === 'dark'
+                              ? 'text-gray-400 hover:text-white'
+                              : 'text-gray-600 hover:text-gray-900'
+                          }`}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          <Github size={24} />
+                        </motion.a>
+                        <motion.a
+                          href="#"
+                          className={`${
+                            theme === 'dark'
+                              ? 'text-gray-400 hover:text-white'
+                              : 'text-gray-600 hover:text-gray-900'
+                          }`}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          <ExternalLink size={24} />
+                        </motion.a>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
         </section>
+
 
         <section id="contact" className={`py-20 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
           <div className="max-w-4xl mx-auto">
