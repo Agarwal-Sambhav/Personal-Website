@@ -5,8 +5,11 @@ import { motion } from 'framer-motion';
 import { Github, ExternalLink, Mail, Linkedin, Instagram, ChevronRight, Sun, Moon, Phone} from 'lucide-react';
 import DownArrow from '../components/DownArrow'
 import headshot from '../app/assets/headshot.jpg';
-import laptop from '../app/assets/laptop.jpg';
-
+import codelab from "../app/assets/codelab.jpg";
+import headstarter from "../app/assets/headstarter.jpeg";
+import asucd from "../app/assets/asucd.jpeg";
+import gg4l from "../app/assets/gg4l_logo.jpeg";
+import cstutoring from "../app/assets/cstutoring.jpeg";
 const technologies = [
   { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/react.svg' },
   { name: 'Node.js', icon: 'https://simpleicons.org/icons/nodedotjs.svg' },
@@ -23,6 +26,33 @@ const technologies = [
   { name: 'Django', icon: 'https://simpleicons.org/icons/django.svg' },
 ];
 
+const leadershipExperiences = [
+  {
+    title: 'Logistics Officer',
+    organization: 'CS Tutoring Club at UC Davis',
+    date: 'Dec 2023 - Present',
+    description: 'Helped organize a professor panels and managed CS tutoring programs, boosting student learning and engagement in CS around campus.',
+    logo: cstutoring.src,
+  },
+  {
+    title: 'CS Tutor',
+    organization: 'Computer Science Department',
+    date: 'September 2022 - Present',
+    description: 'Mentored over 50 students in data structures and algorithms, improving class average by 15%.',
+  },
+  {
+    title: 'Project Lead',
+    organization: 'Google Developer Student Club',
+    date: 'June 2022 - December 2022',
+    description: 'Spearheaded the development of a campus navigation app, coordinating a team of 5 developers.',
+  },
+  {
+    title: 'Project Lead',
+    organization: 'Google Developer Student Club',
+    date: 'June 2022 - December 2022',
+    description: 'Spearheaded the development of a campus navigation app, coordinating a team of 5 developers.',
+  },
+]
 
 
 export function PortfolioPage() {
@@ -92,7 +122,7 @@ export function PortfolioPage() {
           <br />
           <span className="text-blue-400 text-7xl">Sambhav Agarwal</span>
         </h1>
-        <p className="text-2xl mb-8">I like creating apps, websites, and AI models</p>
+        <p className="text-2xl mb-8">I like creating websites, apps, and turning ideas into code</p>
         <motion.a
           href="#experience"
           className="inline-flex items-center bg-blue-500 text-white px-8 py-4 rounded-full hover:bg-blue-600 transition-colors text-xl"
@@ -124,100 +154,136 @@ export function PortfolioPage() {
   </section>
         
   <section id="about" className="py-20 px-6 flex justify-center items-center">
-  <motion.div
-    className="max-w-4xl mx-auto"
-    initial={{ opacity: 0, x: -150 }}
-    whileInView={{ opacity: 2, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 3 }}
-  >
-    <div className="w-24 h-1 bg-blue-400 mb-8"></div>
-    <h2 className="text-4xl font-bold text-blue-400 mb-8 text-center">About Me</h2>
-    <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-      <div className="md:w-2/3">
-        <p className="mb-4 text-lg">
-          Hey! I'm Sambhav Agarwal, and I'm currently pursuing a Bachelor's Degree of
-          Science in Computer Science at the University of California, Davis. Last
-          summer, I was a Software Engineering Intern at GalaxySDK, a startup based in
-          San Francisco.
-        </p>
-        <p className="mb-4 text-lg">
-          My favorite part of programming is creating apps and websites, like this one! I
-          love the whole process of taking an idea from ideation to design to production.
-          I also find competitive programming pretty fun. Finally, I love using AI models
-          to solve interesting and complex problems.
-        </p>
-        <p className="text-lg">
-          Outside of programming, I love a good day outdoors. I often go out with
-          friends and family. I also really like playing table tennis, and played for a few
-          years. I'm down for a game at any time of the day!
-        </p>
+      <motion.div
+        className="max-w-4xl mx-auto"
+        initial={{ opacity: 0, x: -150 }}
+        whileInView={{ opacity: 2, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 3 }}
+      >
+        <div className="w-24 h-1 bg-blue-400 mb-8"></div>
+        <h2 className="text-4xl font-bold text-blue-400 mb-8 text-center">About Me</h2>
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+          <div className="md:w-4/4">
+            <p className="mb-4 text-lg">
+            Hello! I'm Sambhav Agarwal, a passionate Computer Science student at the University of California, Davis. My journey in tech is driven by a curiosity to solve complex problems and create innovative solutions that make a difference. With a strong foundation in programming languages like Python, Java, and JavaScript, I'm constantly exploring new technologies and pushing the boundaries of what's possible in software development.
+            </p>
+            <p className="mb-4 text-lg">
+            My academic journey has been complemented by hands-on projects that showcase my ability to bring ideas to life. My academic goal has been to understand the intersection between business and computer science, so that I can develop user-centric solutions and scale applications. I thrive to build projects that demonstrate my technical abilities and address real-world challenges.
+            </p>
+            <p className="text-lg">
+            As I continue to grow in this field, I'm particularly excited about exploring emerging technologies like artificial intelligence and cloud computing. I believe these areas hold immense potential for creating scalable, innovative solutions that can transform industries.
+            </p>
+  
+          </div>
+
+          {/* Image inside the flex container */}
+          
+        </div>
+
+        {/* Technologies section */}
+        <div className="mt-12">
+          <h3 className="text-2xl font-semibold mb-6 text-center">Technologies I work with</h3>
+          <div className="flex flex-wrap gap-6 justify-center">
+            {technologies.map((tech, index) => (
+              <motion.div
+                key={index}
+                className={`${
+                  theme === 'dark' ? 'bg-gray-800' : 'bg-gray-300'
+                } rounded-full p-3 flex items-center`}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="w-8 h-8 mr-2 filter invert sepia saturate-100 hue-rotate-5"
+                />
+                <span className="text-sm">{tech.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </section>
+
+
+
+    <section id="experience" className={`py-20 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-blue-400 mb-12">Experience</h2>
+        <div className="relative">
+          <div className={`absolute left-1/2 transform -translate-x-1/2 h-full w-1 ${theme === 'dark' ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
+          <div className="space-y-16">
+            {[
+              { company: 'Headstarter AI', role: 'Software Engineer Fellow', date: 'July 2024 - Sep 2024', description: 'I have developed  web applications leveraging React for front-end development, Node.js for server-side logic, and Firebase for real-time database management and authentication.  I actively participated in fire chats with AI professionals. These sessions provided valuable insights into the latest developments, challenges, and opportunities in artificial intelligence. ', logo: headstarter.src },
+              { company: 'Codelab', role: 'Software Developer', date: 'March 2024 - June 2024', description: 'I collaborated with designers and developers to develop a web application that combines the features of Quizlet and Anki. It was a platform to manage flashcards using TypeScript and React JS on the backend. I assisted implementing database schema using PostgreSQL and optimized performance for retrieval of flashcard data. Additionally, I built controllers, utilities, and API endpoints to handle user interactions and data flow.', logo: codelab.src },
+              { company: 'ASUCD Pantry', role: 'Software Developer', date: 'Sep 2023 - Mar 2024', description: 'I collaborated with a team of developers at UC Davis Pantry to create an online ecommerce platform for management of produce. I helped utilize Django, Next.js and PostgreSQL to optimize database queries and ensure smooth data retrieval.  Additionally, I worked on the frontend to enhance visual appeal.', logo: asucd.src },
+              { company: 'Global Grid 4 Learning', role: 'Project Intern', date: 'June 2022 - Sep 2022', description: 'During my experience, I engaged in hands-on work with Data Integration techniques on the CSPA Platform, specializing in user authentication and single sign-on platforms to ensure secure and efficient access control. I successfully deployed applications on the CSPA platform, gaining valuable insights into modern IT management hierarchies. This experience provided exposure to the full software application lifecycle, from design and development to deployment, allowing me to contribute to the creation of innovative solutions.', logo: gg4l.src },
+            ].map((job, index) => (
+              <motion.div
+                key={index}
+                className="relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className={`absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 ${theme === 'dark' ? 'bg-blue-400' : 'bg-blue-600'} rounded-full`}></div>
+                <div className={`ml-8 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} p-6 rounded-lg shadow-lg flex items-start`}>
+                  <img src={job.logo} alt={`${job.company} logo`} className="w-16 h-16 mr-4 object-contain rounded-full" />
+                  <div>
+                    <h3 className="text-2xl font-semibold text-blue-400">{job.company} <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-normal`}>{job.role}</span></h3>
+                    <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{job.date}</p>
+                    <p className="mt-2">{job.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
-
-      {/* Image inside the flex container */}
-      <motion.img
-        src={headshot.src}
-        alt="Sambhav Agarwal"
-        className="rounded-full w-80 h-80 object-cover border-4 border-blue-400"
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.5 }}
-      />
-    </div>
-
-    {/* Technologies section */}
-    <div className="mt-12">
-      <h3 className="text-2xl font-semibold mb-6 text-center">Technologies I work with</h3>
-      <div className="flex flex-wrap gap-6 justify-center">
-        {technologies.map((tech, index) => (
-          <motion.div
-            key={index}
-            className={`${
-              theme === 'dark' ? 'bg-gray-800' : 'bg-gray-300'
-            } rounded-full p-3 flex items-center`}
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <img
-              src={tech.icon}
-              alt={tech.name}
-              className="w-8 h-8 mr-2 filter invert sepia saturate-100 hue-rotate-5"
-            />
-            <span className="text-sm">{tech.name}</span>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </motion.div>
-</section>
-
-
-
-        <section id="experience" className={`py-20 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-blue-400 mb-12">Experience</h2>
+      <section id="leadership" className="py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-blue-400 mb-12 text-center">Leadership Journey</h2>
             <div className="relative">
-              <div className={`absolute left-1/2 transform -translate-x-1/2 h-full w-1 ${theme === 'dark' ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
-              <div className="space-y-16">
-                {[
-                  { company: 'Apple', role: 'SWE Intern', date: 'June 2024 - September 2024', description: 'Incoming Software Engineering Intern for CAD-CSG team in the Silicon Engineering Group for Summer 2024. Super excited!', logo: '/apple-logo.svg' },
-                  { company: 'GalaxySDK', role: 'SWE Intern', date: 'June 2023 - August 2023', description: 'I developed an inviting onboarding page, boosting user experience and increasing monthly signed-in users by 20%. Next, I built a robust Flask, OpenAI, and Firebase backend for a GPT-powered chat game from scratch. After, I worked on 8 tickets to optimize UI/UX, leading to an enhanced interface and resolution of customer concerns.', logo: '/galaxysdk-logo.svg' },
-                  { company: 'Salubrity', role: 'SWE Intern', date: 'June 2022 - August 2022', description: 'I built a Flask backend using Python and Selenium to pull out scrape 70k+ datapoints, helping identify businesses that would benefit from Salubrity\'s services, and leading to an expansion from 1 to 10 cities. I also set up an internal tool using a NGINX server backend with a HTML/CSS/JS frontend to find potential business prospects for future growth.', logo: '/salubrity-logo.svg' },
-                ].map((job, index) => (
+              {/* Curved path */}
+              <svg className="absolute left-1/2 transform -translate-x-1/2 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path
+                  d="M50,0 Q75,50 50,100"
+                  fill="none"
+                  stroke={theme === 'dark' ? '#60A5FA' : '#3B82F6'}
+                  strokeWidth="2"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </svg>
+              
+              {/* Leadership boxes */}
+              <div className="relative z-10">
+                {leadershipExperiences.map((experience, index) => (
                   <motion.div
                     key={index}
-                    className="relative"
+                    className={`max-w-lg mx-auto mb-16 ${index % 2 === 0 ? 'ml-0 mr-auto' : 'ml-auto mr-0'}`}
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <div className={`absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 ${theme === 'dark' ? 'bg-blue-400' : 'bg-blue-600'} rounded-full`}></div>
-                    <div className={`ml-8 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} p-6 rounded-lg shadow-lg flex items-start`}>
-                      <img src={job.logo} alt={`${job.company} logo`} className="w-16 h-16 mr-4 object-contain" />
-                      <div>
-                        <h3 className="text-2xl font-semibold text-blue-400">{job.company} <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-normal`}>{job.role}</span></h3>
-                        <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{job.date}</p>
-                        <p className="mt-2">{job.description}</p>
+                    <div className={`relative ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg shadow-lg overflow-hidden`}>
+                      {/* Logo */}
+                      <div className="absolute top-0 right-0 w-20 h-20 opacity-10">
+                        <img src={experience.logo} alt={`${experience.organization} logo`} className="w-full h-full object-contain" />
                       </div>
+                      
+                      {/* Content */}
+                      <h3 className="text-2xl font-semibold text-blue-400 mb-2">{experience.title}</h3>
+                      <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-2`}>{experience.organization}</p>
+                      <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-4 text-sm`}>{experience.date}</p>
+                      <p className="text-sm">{experience.description}</p>
+                      
+                      {/* Connecting line to the curved path */}
+                      <div
+                        className={`absolute ${index % 2 === 0 ? 'right-0' : 'left-0'} top-1/2 w-8 h-0.5 ${theme === 'dark' ? 'bg-blue-400' : 'bg-blue-500'}`}
+                        style={{ [index % 2 === 0 ? 'right' : 'left']: '-2rem' }}
+                      ></div>
                     </div>
                   </motion.div>
                 ))}
@@ -225,6 +291,9 @@ export function PortfolioPage() {
             </div>
           </div>
         </section>
+    </section>
+
+        
 
         <section id="projects" className="py-20 px-6 flex justify-center items-center">
             <motion.div
@@ -318,7 +387,10 @@ export function PortfolioPage() {
               </div>
             </motion.div>
         </section>
-
+        
+        
+       
+        
 
         <section id="contact" className={`py-20 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
           <div className="max-w-4xl mx-auto">
