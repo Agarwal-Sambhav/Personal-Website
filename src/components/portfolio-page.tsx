@@ -10,6 +10,12 @@ import headstarter from "../app/assets/headstarter.jpeg";
 import asucd from "../app/assets/asucd.jpeg";
 import gg4l from "../app/assets/gg4l_logo.jpeg";
 import cstutoring from "../app/assets/cstutoring.jpeg";
+import Samudra from "../app/assets/samudra.png";
+import SacHacks from "../app/assets/sachacks.png";
+import Equip from "../app/assets/Equip.jpeg";
+import Hack_Club from "../app/assets/hack_club.jpeg";
+import library from "../app/assets/library.png";
+
 const technologies = [
   { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/react.svg' },
   { name: 'Node.js', icon: 'https://simpleicons.org/icons/nodedotjs.svg' },
@@ -28,29 +34,46 @@ const technologies = [
 
 const leadershipExperiences = [
   {
-    title: 'Logistics Officer',
+    title: 'Logistics Director',
     organization: 'CS Tutoring Club at UC Davis',
     date: 'Dec 2023 - Present',
     description: 'Helped organize a professor panels and managed CS tutoring programs, boosting student learning and engagement in CS around campus.',
     logo: cstutoring.src,
   },
   {
-    title: 'CS Tutor',
-    organization: 'Computer Science Department',
+    title: 'Co-Founder',
+    organization: ' Samudra Home Decor',
     date: 'September 2022 - Present',
-    description: 'Mentored over 50 students in data structures and algorithms, improving class average by 15%.',
+    logo: Samudra.src,
+    description: 'Co-founded a venture focused on promoting Indian culture through the imports of intricate Brass idols.',
   },
   {
-    title: 'Project Lead',
-    organization: 'Google Developer Student Club',
-    date: 'June 2022 - December 2022',
-    description: 'Spearheaded the development of a campus navigation app, coordinating a team of 5 developers.',
+    title: 'SacHacks',
+    organization: 'Logistics Officer ',
+    date: 'June 2021 - June 2024',
+    logo: SacHacks.src,
+    description: 'Directing a 200+ attendee hackathon event in the Sacramento region, overseeing logistics and venue arrangements.',
   },
   {
-    title: 'Project Lead',
-    organization: 'Google Developer Student Club',
-    date: 'June 2022 - December 2022',
-    description: 'Spearheaded the development of a campus navigation app, coordinating a team of 5 developers.',
+    title: 'Fellowship Student',
+    organization: 'UC Davis Institute for Innovation and Entrepreneurship',
+    date: 'Aug 2023 - December 2023',
+    logo: Equip.src,
+    description: 'Through the UC Davis EQUIP program, I engaged in a profound self-discovery journey that helped me identify and refine my strengths and weaknesses. The program equipped me with valuable tools to excel in leadership roles, internship opportunities, and interviews, allowing me to present myself authentically to prospective employers.',
+  },
+  {
+    title: 'President and Director of Events',
+    organization: 'Hackathon Club at Mountain House High School',
+    date: 'Aug 2020 - May 2023',
+    logo: Hack_Club.src,
+    description: 'I hosted many field trips and guest panels at our high school. Additionally, led the initiative to host the first high school hackathon with over 150+ participants and $5000 in prices and resources.',
+  },
+  {
+    title: 'Mentor',
+    organization: 'Python Programming classes',
+    date: 'June 2020 - Aug 2022',
+    logo: library.src,
+    description: 'Every summer, I taught a programming language to students in my community. I helped students understand the basics of Python programming and guided them through the process of creating their own projects. In total, I taught over 150+ students, helping them develop a passion for coding and technology.',
   },
 ]
 
@@ -83,25 +106,20 @@ export function PortfolioPage() {
             <a href="#projects" className={`hover:text-blue-400 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Projects</a>
             <a href="#contact" className={`hover:text-blue-400 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Contact</a>
           </div>
-          <a href="/resume.pdf" className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
+          {/* <a href="/resume.pdf" className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
             Resume
-          </a>
+          </a> */}
           <div className="flex space-x-4">
-            <a href="mailto:your.email@example.com" aria-label="Email" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
+            <a href="svagarwal@ucdavis.edu" aria-label="Email" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
               <Mail size={24} />
             </a>
-            <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
+            <a href="https://www.linkedin.com/in/sambhavagarwal1/" aria-label="LinkedIn" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
               <Linkedin size={24} />
             </a>
-            <a href="https://github.com/yourusername" aria-label="GitHub" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
+            <a href="https://github.com/Agarwal-Sambhav" aria-label="GitHub" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
               <Github size={24} />
             </a>
-            <a href="https://discord.com/users/yourid" aria-label="Discord" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 12h8"/><path d="M8 16h4"/><path d="M11 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9z"/><path d="M8 8h8"/></svg>
-            </a>
-            <a href="https://instagram.com/yourusername" aria-label="Instagram" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
-              <Instagram size={24} />
-            </a>
+            
           </div>
         </motion.nav>
 
@@ -264,20 +282,27 @@ export function PortfolioPage() {
                     key={index}
                     className={`max-w-lg mx-auto mb-16 ${index % 2 === 0 ? 'ml-0 mr-auto' : 'ml-auto mr-0'}`}
                     initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 100, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <div className={`relative ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg shadow-lg overflow-hidden`}>
                       {/* Logo */}
-                      <div className="absolute top-0 right-0 w-20 h-20 opacity-10">
-                        <img src={experience.logo} alt={`${experience.organization} logo`} className="w-full h-full object-contain" />
-                      </div>
+                      <div className="absolute top-0 right-0 w-20 h-20 ">
+              
+                        <img src={experience.logo} alt={`${experience.organization} logo`} className="w-full h-full object-contain rounded-full" />
+                  
+                    </div>
                       
                       {/* Content */}
                       <h3 className="text-2xl font-semibold text-blue-400 mb-2">{experience.title}</h3>
                       <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-2`}>{experience.organization}</p>
                       <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-4 text-sm`}>{experience.date}</p>
                       <p className="text-sm">{experience.description}</p>
+                      {experience.title === "Co-Founder" && (
+                        <a href="https://samudra-usa.com" target="_blank" rel="noopener noreferrer">
+                        <ExternalLink size={25} className= "mt-4" />
+                        </a>
+                      )}
                       
                       {/* Connecting line to the curved path */}
                       <div
@@ -442,11 +467,11 @@ export function PortfolioPage() {
               <div className="w-full md:w-1/3 space-y-4">
                 <div className="flex items-center">
                   <Mail size={24} className="mr-2 text-blue-400" />
-                  <a href="mailto:sambhav@example.com" className="hover:text-blue-400 transition-colors">sambhav@example.com</a>
+                  <a href="mailto:svagarwal@ucdavis.edu" className="hover:text-blue-400 transition-colors">svagarwal@ucdavis.edu</a>
                 </div>
                 <div className="flex items-center">
                   <Phone size={24} className="mr-2 text-blue-400" />
-                  <a href="tel:+1234567890" className="hover:text-blue-400 transition-colors">+1 (234) 567-890</a>
+                  <a href="tel:+1234567890" className="hover:text-blue-400 transition-colors">+1 (408) 516-6572</a>
                 </div>
               </div>
             </div>
