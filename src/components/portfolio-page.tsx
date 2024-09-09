@@ -15,6 +15,8 @@ import SacHacks from "../app/assets/sachacks.png";
 import Equip from "../app/assets/Equip.jpeg";
 import Hack_Club from "../app/assets/hack_club.jpeg";
 import library from "../app/assets/library.png";
+import Voguify from "../app/assets/Voguify.png";
+
 
 const technologies = [
   { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/react.svg' },
@@ -92,7 +94,7 @@ export function PortfolioPage() {
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
-      <header className={`fixed top-0 left-0 right-0 z-50 ${theme === 'dark' ? 'bg-gray-900 bg-opacity-90' : 'bg-white bg-opacity-90'} backdrop-blur-sm`}>
+      <header className={`fixed top-0 left-0 right-0 z-50  backdrop-blur-sm`}>
         
       <motion.nav
           initial={{ opacity: 0, y: -100 }}
@@ -332,20 +334,20 @@ export function PortfolioPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   {
-                    title: 'Handscript',
+                    title: 'Vault - Facial Recognition Zoom Authenticator (Web Application)',
                     description:
-                      'A web app that helps users learn American Sign Language with real time translation, instruction, and feedback.',
+                      'Designed an web application to authenticate users through facial recognition enhancing Zoom meeting security',
                     image:
-                      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.41.15%E2%80%AFPM-WbFHtmRSYnOCzYhWOA551bMayA8uOi.png',
-                    technologies: ['Tensorflow', 'React.js', 'AWS', 'Flask'],
+                      '',
+                    technologies: ['Django', 'Neural Networks', 'HTML/CSS', 'Javascript', 'PostgreSQL'],
                   },
                   {
-                    title: 'Chatter',
+                    title: 'Voguiefy - Fashion Outfit Recommender (Mobile App)',
                     description:
-                      'A real-time chat application with features like user authentication, message encryption, and group chats.',
+                      'Developed a cross-platform mobile application using React Native and Firebase that provides personalized outfit recommendations based on the user\'s wardrobe',
                     image:
-                      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-09-04%20at%208.41.15%E2%80%AFPM-WbFHtmRSYnOCzYhWOA551bMayA8uOi.png',
-                    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
+                      Voguify.src,
+                    technologies: ['React Native', 'Tailwind CSS', 'Firebase', 'Expo'],
                   },
                 ].map((project, index) => (
                   <motion.div
@@ -359,7 +361,7 @@ export function PortfolioPage() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-60 object-cover transition: transform 0.3s ease-in-out"
                     />
                     <div className="p-6">
                       <h3 className="text-2xl font-semibold text-blue-400 mb-2">{project.title}</h3>
