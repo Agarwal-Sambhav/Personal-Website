@@ -14,7 +14,7 @@ import Samudra from "../app/assets/samudra.png";
 import SacHacks from "../app/assets/sachacks.png";
 import Equip from "../app/assets/Equip.jpeg";
 import Hack_Club from "../app/assets/hack_club.jpeg";
-import library from "../app/assets/library.png";
+// import library from "../app/assets/library.png";
 import Voguify from "../app/assets/Voguify.png";
 
 
@@ -74,7 +74,7 @@ const leadershipExperiences = [
     title: 'Mentor',
     organization: 'Python Programming classes',
     date: 'June 2020 - Aug 2022',
-    logo: library.src,
+    // logo: library.src,
     description: 'Every summer, I taught a programming language to students in my community. I helped students understand the basics of Python programming and guided them through the process of creating their own projects. In total, I taught over 150+ students, helping them develop a passion for coding and technology.',
   },
 ]
