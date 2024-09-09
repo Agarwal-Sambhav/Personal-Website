@@ -4,17 +4,17 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Mail, Linkedin, Instagram, ChevronRight, Sun, Moon, Phone} from 'lucide-react';
 import DownArrow from '../components/DownArrow'
-import headshot from '../app/assets/Headshot.jpg';
-import codelab from "../app/assets/Codelab.jpg";
-import headstarter from "../app/assets/Headstarter.jpeg";
-import asucd from "../app/assets/Asucd.jpeg";
-import gg4l from "../app/assets/Gg4l_logo.jpeg";
-import cstutoring from "../app/assets/Cstutoring.jpeg";
+import headshot from '../app/assets/headshot.jpg';
+import codelab from "../app/assets/codelab.jpg";
+import headstarter from "../app/assets/headstarter.jpeg";
+import asucd from "../app/assets/asucd.jpeg";
+import gg4l from "../app/assets/gg4l_logo.jpeg";
+import cstutoring from "../app/assets/cstutoring.jpeg";
 import Samudra from "../app/assets/Samudra.png";
 import SacHacks from "../app/assets/Sachacks.png";
 import Equip from "../app/assets/Equip.jpeg";
-import Hack_Club from "../app/assets/Hack_club.jpeg";
-import library from "../app/assets/Library.png";
+import Hack_Club from "../app/assets/hack_club.jpeg";
+import library from "../app/assets/library.png";
 import Voguify from "../app/assets/Voguify.png";
 
 
