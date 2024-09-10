@@ -16,6 +16,7 @@ import Equip from "../app/assets/Equip.jpeg";
 import Hack_Club from "../app/assets/hack_club.jpeg";
 import library from "../app/assets/library.png";
 import Voguify from "../app/assets/Voguify.png";
+import { link } from 'fs';
 
 
 const technologies = [
@@ -33,6 +34,7 @@ const technologies = [
   { name: 'C++', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/cplusplus.svg' },
   { name: 'Django', icon: 'https://simpleicons.org/icons/django.svg' },
 ];
+
 
 const leadershipExperiences = [
   {
@@ -74,7 +76,7 @@ const leadershipExperiences = [
     title: 'Mentor',
     organization: 'Python Programming classes',
     date: 'June 2020 - Aug 2022',
-    // logo: library.src,
+    logo: library.src,
     description: 'Every summer, I taught a programming language to students in my community. I helped students understand the basics of Python programming and guided them through the process of creating their own projects. In total, I taught over 150+ students, helping them develop a passion for coding and technology.',
   },
 ]
@@ -150,6 +152,7 @@ export function PortfolioPage() {
           whileTap={{ scale: 0.95 }}
         >
           See my experience <ChevronRight className="ml-2" size={24} />
+          
         </motion.a>
       </motion.div>
 
@@ -339,7 +342,9 @@ export function PortfolioPage() {
                       'Designed an web application to authenticate users through facial recognition enhancing Zoom meeting security',
                     image:
                       '',
+                      github: "https://github.com/Agarwal-Sambhav/secure-meeting-vault",
                     technologies: ['Django', 'Neural Networks', 'HTML/CSS', 'Javascript', 'PostgreSQL'],
+                    link: '',
                   },
                   {
                     title: 'Voguiefy - Fashion Outfit Recommender (Mobile App)',
@@ -348,6 +353,8 @@ export function PortfolioPage() {
                     image:
                       Voguify.src,
                     technologies: ['React Native', 'Tailwind CSS', 'Firebase', 'Expo'],
+                    github:'https://github.com/GitYaw/Voguify-GDSC',
+                    link:'https://devpost.com/software/voguify',
                   },
                 ].map((project, index) => (
                   <motion.div
@@ -385,8 +392,8 @@ export function PortfolioPage() {
                         ))}
                       </div>
                       <div className="flex gap-4">
-                        <motion.a
-                          href="#"
+                        <motion.div
+                          
                           className={`${
                             theme === 'dark'
                               ? 'text-gray-400 hover:text-white'
@@ -394,10 +401,13 @@ export function PortfolioPage() {
                           }`}
                           whileHover={{ scale: 1.1 }}
                         >
-                          <Github size={24} />
-                        </motion.a>
-                        <motion.a
-                          href="#"
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github size={24} />
+                          </a>
+                          
+                        </motion.div>
+                        <motion.div
+                          
                           className={`${
                             theme === 'dark'
                               ? 'text-gray-400 hover:text-white'
@@ -405,8 +415,12 @@ export function PortfolioPage() {
                           }`}
                           whileHover={{ scale: 1.1 }}
                         >
-                          <ExternalLink size={24} />
-                        </motion.a>
+                          {project.link !== '' && (
+                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink size={24} />
+                          </a>
+                          )}
+                        </motion.div>
                       </div>
                     </div>
                   </motion.div>
