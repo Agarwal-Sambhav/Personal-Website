@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Mail, Linkedin, Instagram, ChevronRight, Sun, Moon, Phone} from 'lucide-react';
+import { Github, ExternalLink, Mail, Linkedin, Instagram, ChevronRight, Sun, Moon, Phone, Menu} from 'lucide-react';
 import DownArrow from '../components/DownArrow'
 import headshot from '../app/assets/headshot.jpg';
 import codelab from "../app/assets/codelab.jpg";
@@ -85,6 +85,7 @@ const leadershipExperiences = [
 export function PortfolioPage() {
   const [activeSection, setActiveSection] = useState('home')
   const [theme, setTheme] = useState('dark')
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     document.body.className = theme
@@ -93,28 +94,39 @@ export function PortfolioPage() {
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
+  
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
-      <header className={`fixed top-0 left-0 right-0 z-50  backdrop-blur-sm`}>
-        
-      <motion.nav
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm">
+        <motion.nav
           initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 5, y: 20 }}
-          transition={{ duration: 2 }}
-          className="container mx-auto px-6 py-4 flex justify-between items-center"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="container mx-auto px-6 py-4 flex justify-between items-center relative z-10"
         >
-          <div className="flex space-x-6">
+          {/* Hamburger Button for Mobile */}
+          <button 
+            onClick={toggleMenu} 
+            className="md:hidden focus:outline-none z-20"
+          >
+            <Menu size={24} />
+          </button>
+
+          {/* Navigation Links */}
+          <div className={`fixed inset-x-0 top-16 md:static ${isMenuOpen ? 'flex' : 'hidden'} flex-col md:flex md:flex-row md:space-x-6 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} md:bg-transparent p-4 md:p-0 transition-transform duration-300 ease-in-out z-10`}>
             <a href="#about" className={`hover:text-blue-400 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>About</a>
             <a href="#experience" className={`hover:text-blue-400 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Experience</a>
             <a href="#projects" className={`hover:text-blue-400 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Projects</a>
             <a href="#contact" className={`hover:text-blue-400 transition-colors ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Contact</a>
           </div>
-          {/* <a href="/resume.pdf" className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
-            Resume
-          </a> */}
-          <div className="flex space-x-4">
-            <a href="svagarwal@ucdavis.edu" aria-label="Email" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
+
+          {/* Social Icons */}
+          <div className="flex space-x-4 z-20">
+            <a href="mailto:svagarwal@ucdavis.edu" aria-label="Email" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
               <Mail size={24} />
             </a>
             <a href="https://www.linkedin.com/in/sambhavagarwal1/" aria-label="LinkedIn" className={`${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
@@ -126,8 +138,6 @@ export function PortfolioPage() {
             
           </div>
         </motion.nav>
-
-
       </header>
 
       <main className="pt-20">
