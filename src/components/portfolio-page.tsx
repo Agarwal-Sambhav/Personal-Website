@@ -96,7 +96,7 @@ const projects = [
   {
     title: 'Vault - Facial Recognition Zoom Authenticator (Web Application)',
     description:
-      'Designed an web application to authenticate users through facial recognition enhancing Zoom meeting security',
+      'Designed an web application to authenticate users through facial recognition enhancing Zoom meeting security. Used Neural Networks and ML Models to match faces and authenticate users.',
     image:
       '',
       github: "https://github.com/Agarwal-Sambhav/secure-meeting-vault",
