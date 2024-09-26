@@ -17,7 +17,7 @@ import Hack_Club from "../app/assets/hack_club.jpeg";
 import library from "../app/assets/library.png";
 import Voguify from "../app/assets/Voguify.png";
 import { link } from 'fs';
-import Mentalhealth from "../app/assets/Mentalhealth.jpg";
+import MentalHealth from "../app/assets/MentalHealth.jpg";
 
 
 const technologies = [
@@ -128,7 +128,7 @@ const projects = [
     description:
       'Developed a community-focused social platform for students, featuring an AI-driven friend recommendation system, a chat feature, a stress calculator, a friend finder, and a blog for student engagement. It featured an ML-powered friend recommendation system based on K-Nearest Neighbors algorithm trained on 10,000 user profiles.',
     image:
-      Mentalhealth.src,
+      MentalHealth.src,
       github: "https://github.com/Krigupt/SacHacks",
     technologies: ['JSON', 'Flask', 'APIs', 'Javascript'],
     link: 'https://devpost.com/software/mentalwell-connect',
