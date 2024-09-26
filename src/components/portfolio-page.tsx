@@ -17,6 +17,7 @@ import Hack_Club from "../app/assets/hack_club.jpeg";
 import library from "../app/assets/library.png";
 import Voguify from "../app/assets/Voguify.png";
 import { link } from 'fs';
+import Mentalhealth from "../app/assets/Mentalhealth.jpg";
 
 
 const technologies = [
@@ -81,6 +82,58 @@ const leadershipExperiences = [
   },
 ]
 
+const projects = [
+  {
+    title: 'Nutritrack - Nutrition Tracking App (Mobile App)',
+    description:
+      'Developed a calorie tracking web application that analyzes food photos, provides personalized diet suggestions, and displays a visual history of calorie and nutrient intake. It also features an LLM-powered virtual dietician offering daily updates and personalized guidance.',
+    image:
+      '',
+      github: "https://github.com/Agarwal-Sambhav/NutriTrack",
+    technologies: ['Flask', 'Computer Vision', 'Next.js', 'Javascript', 'PostgreSQL'],
+    link: '',
+  },
+  {
+    title: 'Vault - Facial Recognition Zoom Authenticator (Web Application)',
+    description:
+      'Designed an web application to authenticate users through facial recognition enhancing Zoom meeting security',
+    image:
+      '',
+      github: "https://github.com/Agarwal-Sambhav/secure-meeting-vault",
+    technologies: ['Django', 'Neural Networks', 'HTML/CSS', 'Javascript', 'PostgreSQL'],
+    link: '',
+  },
+  {
+    title: 'Voguiefy - Fashion Outfit Recommender (Mobile App)',
+    description:
+      'Developed a cross-platform mobile application using React Native and Firebase that provides personalized outfit recommendations based on the user\'s wardrobe',
+    image:
+      Voguify.src,
+    technologies: ['React Native', 'Tailwind CSS', 'Firebase', 'Expo'],
+    github:'https://github.com/GitYaw/Voguify-GDSC',
+    link:'https://devpost.com/software/voguify',
+  },
+  {
+    title: 'Fun with Flora (Web Application)',
+    description:
+      'Developed a Web Application leveraging camera technology to recognize plants, providing insights into their health and rarity with a remarkable 90% success rate. ',
+    image:
+      '',
+      github: "https://github.com/Agarwal-Sambhav/Fun_with_Flora",
+    technologies: ['JSON', 'Flask', 'APIs', 'Javascript'],
+    link: '',
+  },
+  {
+    title: 'MentalHealth Connect (Web Application)',
+    description:
+      'Developed a community-focused social platform for students, featuring an AI-driven friend recommendation system, a chat feature, a stress calculator, a friend finder, and a blog for student engagement. It featured an ML-powered friend recommendation system based on K-Nearest Neighbors algorithm trained on 10,000 user profiles.',
+    image:
+      Mentalhealth.src,
+      github: "https://github.com/Krigupt/SacHacks",
+    technologies: ['JSON', 'Flask', 'APIs', 'Javascript'],
+    link: 'https://devpost.com/software/mentalwell-connect',
+  },
+]
 
 export function PortfolioPage() {
   const [activeSection, setActiveSection] = useState('home')
@@ -335,109 +388,85 @@ export function PortfolioPage() {
 
         
 
-        <section id="projects" className="py-20 px-6 flex justify-center items-center">
+    <section id="projects" className="py-20 px-6 flex justify-center items-center">
+      <motion.div
+        className="max-w-6xl mx-auto"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 3 }}
+      >
+        <h2 className="text-4xl font-bold text-blue-400 mb-12 text-center">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
             <motion.div
-              className="max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 3 }}
+              key={index}
+              className={`${
+                theme === 'dark' ? 'bg-gray-800' : 'bg-white'
+              } rounded-lg overflow-hidden shadow-lg`}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
             >
-              <h2 className="text-4xl font-bold text-blue-400 mb-12 text-center">Projects</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {[
-                  {
-                    title: 'Vault - Facial Recognition Zoom Authenticator (Web Application)',
-                    description:
-                      'Designed an web application to authenticate users through facial recognition enhancing Zoom meeting security',
-                    image:
-                      '',
-                      github: "https://github.com/Agarwal-Sambhav/secure-meeting-vault",
-                    technologies: ['Django', 'Neural Networks', 'HTML/CSS', 'Javascript', 'PostgreSQL'],
-                    link: '',
-                  },
-                  {
-                    title: 'Voguiefy - Fashion Outfit Recommender (Mobile App)',
-                    description:
-                      'Developed a cross-platform mobile application using React Native and Firebase that provides personalized outfit recommendations based on the user\'s wardrobe',
-                    image:
-                      Voguify.src,
-                    technologies: ['React Native', 'Tailwind CSS', 'Firebase', 'Expo'],
-                    github:'https://github.com/GitYaw/Voguify-GDSC',
-                    link:'https://devpost.com/software/voguify',
-                  },
-                ].map((project, index) => (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-60 object-cover transition-transform duration-300 ease-in-out"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-blue-400 mb-2">{project.title}</h3>
+                <p
+                  className={`mb-4 ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                  }`}
+                >
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className={`${
+                        theme === 'dark' ? 'bg-gray-700' : 'bg-gray-200'
+                      } text-sm rounded-full px-3 py-1`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4">
                   <motion.div
-                    key={index}
                     className={`${
-                      theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-                    } rounded-lg overflow-hidden shadow-lg`}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                      theme === 'dark'
+                        ? 'text-gray-400 hover:text-white'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                    whileHover={{ scale: 1.1 }}
                   >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-60 object-cover transition: transform 0.3s ease-in-out"
-                    />
-                    <div className="p-6">
-                      <h3 className="text-2xl font-semibold text-blue-400 mb-2">{project.title}</h3>
-                      <p
-                        className={`mb-4 ${
-                          theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-                        }`}
-                      >
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className={`${
-                              theme === 'dark' ? 'bg-gray-700' : 'bg-gray-200'
-                            } text-sm rounded-full px-3 py-1`}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="flex gap-4">
-                        <motion.div
-                          
-                          className={`${
-                            theme === 'dark'
-                              ? 'text-gray-400 hover:text-white'
-                              : 'text-gray-600 hover:text-gray-900'
-                          }`}
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <Github size={24} />
-                          </a>
-                          
-                        </motion.div>
-                        <motion.div
-                          
-                          className={`${
-                            theme === 'dark'
-                              ? 'text-gray-400 hover:text-white'
-                              : 'text-gray-600 hover:text-gray-900'
-                          }`}
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          {project.link !== '' && (
-                            <a href={project.github} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink size={24} />
-                          </a>
-                          )}
-                        </motion.div>
-                      </div>
-                    </div>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github size={24} />
+                    </a>
                   </motion.div>
-                ))}
+                  <motion.div
+                    className={`${
+                      theme === 'dark'
+                        ? 'text-gray-400 hover:text-white'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {project.link !== '' && (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink size={24} />
+                      </a>
+                    )}
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
-        </section>
+          ))}
+        </div>
+      </motion.div>
+    </section>
         
         
        
