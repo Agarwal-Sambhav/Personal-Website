@@ -11,13 +11,15 @@ import asucd from "../app/assets/asucd.jpeg";
 import gg4l from "../app/assets/gg4l_logo.jpeg";
 import cstutoring from "../app/assets/cstutoring.jpeg";
 import Samudra from "../app/assets/Samudra.png";
-import SacHacks from "../app/assets/Sachacks.png";
+import SacHacks from "../app/assets/original.png";
 import Equip from "../app/assets/Equip.jpeg";
 import Hack_Club from "../app/assets/hack_club.jpeg";
 import library from "../app/assets/library.png";
 import Voguify from "../app/assets/Voguify.png";
 import { link } from 'fs';
 import MentalHealth from "../app/assets/MentalHealth.jpg";
+import tomorrows_ai from "../app/assets/tomorrows_ai_logo.jpeg";
+import american_express from "../app/assets/american_express.png";
 
 
 const technologies = [
@@ -39,9 +41,16 @@ const technologies = [
 
 const leadershipExperiences = [
   {
+    title: 'Mountain Hacks',
+    organization: 'VP of Logistics and Finance ',
+    date: 'June 2024 - Present',
+    logo: SacHacks.src,
+    description: 'Directing a 400+ attendee hackathon event, overseeing logistics, partnership, and finance arrangements.',
+  },
+  {
     title: 'Logistics Director',
     organization: 'CS Tutoring Club at UC Davis',
-    date: 'Dec 2023 - Present',
+    date: 'Dec 2023 - Jan 2025',
     description: 'Helped organize a professor panels and managed CS tutoring programs, boosting student learning and engagement in CS around campus.',
     logo: cstutoring.src,
   },
@@ -52,13 +61,7 @@ const leadershipExperiences = [
     logo: Samudra.src,
     description: 'Co-founded a venture focused on promoting Indian culture through the imports of intricate Brass idols.',
   },
-  {
-    title: 'SacHacks',
-    organization: 'Logistics Officer ',
-    date: 'June 2021 - June 2024',
-    logo: SacHacks.src,
-    description: 'Directing a 200+ attendee hackathon event in the Sacramento region, overseeing logistics and venue arrangements.',
-  },
+  
   {
     title: 'Fellowship Student',
     organization: 'UC Davis Institute for Innovation and Entrepreneurship',
@@ -302,6 +305,9 @@ export function PortfolioPage() {
           <div className={`absolute left-1/2 transform -translate-x-1/2 h-full w-1 ${theme === 'dark' ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
           <div className="space-y-16">
             {[
+              { company: 'American Express', role: 'Future Product Innovation Intern', date: 'Jun 2025 -', description: 'Credit and Fraud Risk Department ', logo: american_express.src },
+              { company: 'ASUCD Pantry', role: 'IT Coordinator', date: 'Oct 2024 - Present', description: 'Currently developing a streamlined shift sign-up system for the pantry, designed to simplify scheduling, enhance volunteer coordination, and improve overall operational efficiency.', logo: asucd.src },
+              { company: 'Tomorrows AI', role: 'Software Engineer Intern', date: 'Sep 2024 - Dec 2024', description: 'At Tomorrows AI, I developed an website using Flask and SQL, implementing automated data ingestion and security measures to enhance data accessibility. I led a cross-functional team to implement SEO optimization strategies, improving website optimization by 30% through enhanced site architecture and targeted keyword integration. Additionally, I engineered an automated web scraping system to collect news articles. ', logo: tomorrows_ai.src },
               { company: 'Headstarter AI', role: 'Software Engineer Fellow', date: 'July 2024 - Sep 2024', description: 'I have developed  web applications leveraging React for front-end development, Node.js for server-side logic, and Firebase for real-time database management and authentication.  I actively participated in fire chats with AI professionals. These sessions provided valuable insights into the latest developments, challenges, and opportunities in artificial intelligence. ', logo: headstarter.src },
               { company: 'Codelab', role: 'Software Developer', date: 'March 2024 - June 2024', description: 'I collaborated with designers and developers to develop a web application that combines the features of Quizlet and Anki. It was a platform to manage flashcards using TypeScript and React JS on the backend. I assisted implementing database schema using PostgreSQL and optimized performance for retrieval of flashcard data. Additionally, I built controllers, utilities, and API endpoints to handle user interactions and data flow.', logo: codelab.src },
               { company: 'ASUCD Pantry', role: 'Software Developer', date: 'Sep 2023 - Mar 2024', description: 'I collaborated with a team of developers at UC Davis Pantry to create an online ecommerce platform for management of produce. I helped utilize Django, Next.js and PostgreSQL to optimize database queries and ensure smooth data retrieval.  Additionally, I worked on the frontend to enhance visual appeal.', logo: asucd.src },
