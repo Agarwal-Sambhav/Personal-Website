@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Mail, Linkedin, Instagram, ChevronRight, Sun, Moon, Phone, Menu} from 'lucide-react';
+import { Github, ExternalLink, Mail, Linkedin, ChevronRight, Sun, Moon, Menu} from 'lucide-react';
 import DownArrow from '../components/DownArrow'
 import headshot from '../app/assets/headshot.jpg';
 import codelab from "../app/assets/codelab.jpg";
@@ -41,47 +41,53 @@ const technologies = [
 
 const leadershipExperiences = [
   {
-    title: 'Mountain Hacks',
-    organization: 'VP of Logistics and Finance ',
-    date: 'June 2024 - Present',
+    title: 'President',
+    organization: 'SacHacks',
+    date: 'May 2025 - Present',
     logo: SacHacks.src,
-    description: 'Directing a 400+ attendee hackathon event, overseeing logistics, partnership, and finance arrangements.',
+    description: 'Overseeing the strategic direction and execution of SacHacks, leading cross-functional teams, managing university and sponsor relations, and ensuring the success of all organizational initiatives.',
+  },
+  {
+    title: 'Vice President of Logistics & Finance',
+    organization: 'SacHacks',
+    date: 'Aug 2024 - May 2025',
+    logo: SacHacks.src,
+    description: 'Coordinated event operations and budget management, handling vendor contracts, venue planning, and financial oversight to ensure a well-resourced and smooth experience for participants and sponsors.',
   },
   {
     title: 'Logistics Director',
     organization: 'CS Tutoring Club at UC Davis',
     date: 'Dec 2023 - Jan 2025',
-    description: 'Helped organize a professor panels and managed CS tutoring programs, boosting student learning and engagement in CS around campus.',
+    description: 'Helped organize professor panels and managed CS tutoring programs, boosting student learning and engagement in CS around campus.',
     logo: cstutoring.src,
   },
   {
     title: 'Co-Founder',
-    organization: ' Samudra Home Decor',
-    date: 'September 2022 - Present',
+    organization: 'Samudra Home Decor',
+    date: 'Nov 2021 - Jun 2024',
     logo: Samudra.src,
-    description: 'Co-founded a venture focused on promoting Indian culture through the imports of intricate Brass idols.',
+    description: 'Co-founded a venture focused on promoting Indian culture through the import of traditional home décor and brass idols. Led supplier onboarding, import logistics, tax coordination, and social media campaigns to grow brand visibility and customer reach.',
   },
-  
   {
-    title: 'Fellowship Student',
+    title: 'Equip Fellowship Student',
     organization: 'UC Davis Institute for Innovation and Entrepreneurship',
-    date: 'Aug 2023 - December 2023',
+    date: 'Aug 2023 - Dec 2023',
     logo: Equip.src,
-    description: 'Through the UC Davis EQUIP program, I engaged in a profound self-discovery journey that helped me identify and refine my strengths and weaknesses. The program equipped me with valuable tools to excel in leadership roles, internship opportunities, and interviews, allowing me to present myself authentically to prospective employers.',
+    description: 'Fellowship focused on innovation, design thinking, and career development.',
   },
   {
-    title: 'President and Director of Events',
-    organization: 'Hackathon Club at Mountain House High School',
-    date: 'Aug 2020 - May 2023',
+    title: 'Club President',
+    organization: 'Hack Club at Mountain House High School',
+    date: 'Jun 2020 - Aug 2023',
     logo: Hack_Club.src,
-    description: 'I hosted many field trips and guest panels at our high school. Additionally, led the initiative to host the first high school hackathon with over 150+ participants and $5000 in prices and resources.',
+    description: 'Led initiatives to expand the club\'s impact, including organizing the first hackathon with 150+ student participation and $2k+ in prizes, tech field trips, and outreach events. Provided mentorship, coordinated sponsorships, and served as a school ambassador for Hack Club, fostering a collaborative and tech-driven student community.',
   },
   {
     title: 'Mentor',
-    organization: 'Python Programming classes',
-    date: 'June 2020 - Aug 2022',
+    organization: 'Python Programming Classes',
+    date: 'Jun 2020 - Aug 2022',
     logo: library.src,
-    description: 'Every summer, I taught a programming language to students in my community. I helped students understand the basics of Python programming and guided them through the process of creating their own projects. In total, I taught over 150+ students, helping them develop a passion for coding and technology.',
+    description: 'Taught Python programming to students in the community each summer, guiding them through building their own projects. Taught over 150+ students, helping them develop a passion for coding and technology.',
   },
 ]
 
@@ -197,77 +203,90 @@ export function PortfolioPage() {
       </header>
 
       <main className="pt-20">
-      <section id="home" className="min-h-screen flex items-center justify-center px-6">
-    <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
-      <motion.div
-        className="md:w-1/2 mb-8 md:mb-0 pr-8"
-        initial={{ opacity: 0, x: -150 }}
-        animate={{ opacity: 2, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-6xl font-bold mb-4">
-          Hey there! I'm
-          <br />
-          <span className="text-blue-400 text-7xl">Sambhav Agarwal</span>
-        </h1>
-        <p className="text-2xl mb-8">I like creating websites, apps, and turning ideas into code</p>
-        <motion.a
-          href="#experience"
-          className="inline-flex items-center bg-blue-500 text-white px-8 py-4 rounded-full hover:bg-blue-600 transition-colors text-xl"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          See my experience <ChevronRight className="ml-2" size={24} />
-          
-        </motion.a>
-      </motion.div>
+      <section id="home" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-1/3 right-1/3 w-[600px] h-[600px] bg-blue-600 rounded-full opacity-5 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-indigo-600 rounded-full opacity-5 blur-3xl pointer-events-none" />
 
-      <motion.div
-        className="md:w-1/2 flex justify-center"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <img
-          src={headshot.src}
-          alt="3D Cube"
-          className="w-96 h-96 object-cover rounded-full border-4  border-blue-400"
-          
-        />
-      </motion.div>
-    </div>
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
+          <motion.div
+            className="md:w-1/2 mb-8 md:mb-0 pr-8"
+            initial={{ opacity: 0, x: -80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-4">Hey there, I'm</p>
+            <h1 className="text-6xl font-bold mb-4 leading-tight">
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-300 bg-clip-text text-transparent">
+                Sambhav Agarwal
+              </span>
+            </h1>
+            <p className={`text-xl mb-3 font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>CS @ UC Davis · Product &amp; Engineering</p>
+            <p className={`text-lg mb-8 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Building cool tech and solving real-world problems</p>
+            <div className="flex gap-4 flex-wrap">
+              <motion.a
+                href="#experience"
+                className="inline-flex items-center bg-blue-500 text-white px-8 py-4 rounded-full hover:bg-blue-600 transition-colors text-lg font-medium"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                See my experience <ChevronRight className="ml-2" size={20} />
+              </motion.a>
+              <motion.a
+                href="#contact"
+                className={`inline-flex items-center px-8 py-4 rounded-full border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors text-lg font-medium`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Let's chat
+              </motion.a>
+            </div>
+          </motion.div>
 
-    <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
-      <DownArrow />
-    </div>
-  </section>
+          <motion.div
+            className="md:w-1/2 flex justify-center"
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 opacity-20 blur-2xl scale-110" />
+              <img
+                src={headshot.src}
+                alt="Sambhav Agarwal"
+                className="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-4 border-blue-400/60 shadow-2xl shadow-blue-500/20"
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+          <DownArrow />
+        </div>
+      </section>
         
-  <section id="about" className="py-20 px-6 flex justify-center items-center">
+  <section id="about" className="py-24 px-6 flex justify-center items-center">
       <motion.div
         className="max-w-4xl mx-auto"
-        initial={{ opacity: 0, x: -150 }}
-        whileInView={{ opacity: 2, x: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <div className="w-24 h-1 bg-blue-400 mb-8"></div>
-        <h2 className="text-4xl font-bold text-blue-400 mb-8 text-center">About Me</h2>
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-          <div className="md:w-4/4">
-            <p className="mb-4 text-lg">
-            Hello! I'm Sambhav Agarwal, a passionate Computer Science student at the University of California, Davis. My journey in tech is driven by a curiosity to solve complex problems and create innovative solutions that make a difference. With a strong foundation in programming languages like Python, Java, and JavaScript, I'm constantly exploring new technologies and pushing the boundaries of what's possible in software development.
+        <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-4 text-center">Who I Am</p>
+        <h2 className="text-4xl font-bold text-white mb-2 text-center">About Me</h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-10 rounded-full"></div>
+        <div className="text-center max-w-2xl mx-auto space-y-5">
+            <p className={`text-lg leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+              Computer Science major at UC Davis passionate about building cool tech and solving real-world problems. I thrive in fast-paced environments, enjoy collaborating with driven teams, and am always down for a coffee chat to learn something new or explore new ideas.
             </p>
-            <p className="mb-4 text-lg">
-            My academic journey has been complemented by hands-on projects that showcase my ability to bring ideas to life. My academic goal has been to understand the intersection between business and computer science, so that I can develop user-centric solutions and scale applications. I thrive to build projects that demonstrate my technical abilities and address real-world challenges.
+            <p className={`text-lg leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+              My journey spans product management, software engineering, and research — driven by the intersection of business and technology. I love building user-centric solutions, scaling applications, and working with people who are just as excited about their craft as I am.
             </p>
-            <p className="text-lg">
-            As I continue to grow in this field, I'm particularly excited about exploring emerging technologies like artificial intelligence and cloud computing. I believe these areas hold immense potential for creating scalable, innovative solutions that can transform industries.
+            <p className={`text-lg leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+              Always building, always learning —{' '}
+              <a href="mailto:svagarwal@ucdavis.edu" className="text-blue-400 hover:underline font-medium">let's connect</a>.
             </p>
-  
-          </div>
-
-          {/* Image inside the flex container */}
-          
         </div>
 
         {/* Technologies section */}
@@ -298,20 +317,24 @@ export function PortfolioPage() {
 
 
 
-    <section id="experience" className={`py-20 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
+    <section id="experience" className={`py-24 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-blue-400 mb-12">Experience</h2>
+        <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-4 text-center">Where I've Worked</p>
+        <h2 className="text-4xl font-bold text-white mb-2 text-center">Experience</h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-12 rounded-full"></div>
         <div className="relative">
           <div className={`absolute left-1/2 transform -translate-x-1/2 h-full w-1 ${theme === 'dark' ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
           <div className="space-y-16">
             {[
-              { company: 'American Express', role: 'Upcoming Product Innovation Intern', date: 'Jun 2025', description: 'Credit and Fraud Risk Department ', logo: american_express.src },
-              { company: 'ASUCD Pantry', role: 'IT Coordinator', date: 'Oct 2024 - Present', description: 'Currently developing a streamlined shift sign-up system for the pantry, designed to simplify scheduling, enhance volunteer coordination, and improve overall operational efficiency.', logo: asucd.src },
-              { company: 'Tomorrows AI', role: 'Software Engineer Intern', date: 'Sep 2024 - Dec 2024', description: 'At Tomorrows AI, I developed an website using Flask and SQL, implementing automated data ingestion and security measures to enhance data accessibility. I led a cross-functional team to implement SEO optimization strategies, improving website optimization by 30% through enhanced site architecture and targeted keyword integration. Additionally, I engineered an automated web scraping system to collect news articles. ', logo: tomorrows_ai.src },
-              { company: 'Headstarter AI', role: 'Software Engineer Fellow', date: 'July 2024 - Sep 2024', description: 'I have developed  web applications leveraging React for front-end development, Node.js for server-side logic, and Firebase for real-time database management and authentication.  I actively participated in fire chats with AI professionals. These sessions provided valuable insights into the latest developments, challenges, and opportunities in artificial intelligence. ', logo: headstarter.src },
-              { company: 'Codelab', role: 'Software Developer', date: 'March 2024 - June 2024', description: 'I collaborated with designers and developers to develop a web application that combines the features of Quizlet and Anki. It was a platform to manage flashcards using TypeScript and React JS on the backend. I assisted implementing database schema using PostgreSQL and optimized performance for retrieval of flashcard data. Additionally, I built controllers, utilities, and API endpoints to handle user interactions and data flow.', logo: codelab.src },
-              { company: 'ASUCD Pantry', role: 'Software Developer', date: 'Sep 2023 - Mar 2024', description: 'I collaborated with a team of developers at UC Davis Pantry to create an online ecommerce platform for management of produce. I helped utilize Django, Next.js and PostgreSQL to optimize database queries and ensure smooth data retrieval.  Additionally, I worked on the frontend to enhance visual appeal.', logo: asucd.src },
-              { company: 'Global Grid 4 Learning', role: 'Project Intern', date: 'June 2022 - Sep 2022', description: 'During my experience, I engaged in hands-on work with Data Integration techniques on the CSPA Platform, specializing in user authentication and single sign-on platforms to ensure secure and efficient access control. I successfully deployed applications on the CSPA platform, gaining valuable insights into modern IT management hierarchies. This experience provided exposure to the full software application lifecycle, from design and development to deployment, allowing me to contribute to the creation of innovative solutions.', logo: gg4l.src },
+              { company: 'ASUCD Pantry', role: 'Technical Projects Manager', date: 'Jul 2025 - Present', description: 'Leading a dev team on multiple projects, from scoping and prioritization to delivery, to keep Pantry\'s technical infrastructure growing with the organization.', logo: asucd.src },
+              { company: 'American Express', role: 'Product Innovation Intern', date: 'Jun 2025 - Aug 2025', description: 'Conducted a cross-platform analysis of financial aggregator integrations (Yodlee, Plaid) to evaluate UI ownership, data storage models, and risk derivation workflows, identifying differences in integration approaches across teams. Designed and documented a standardized L1 architecture for aggregator integrations, reducing duplication, improving customer consent tracking, and enabling scalable use across multiple business units. Partnered with product, risk, and engineering teams to assess trade-offs, build comparative analysis tables, and present recommendations to senior leadership.', logo: american_express.src },
+              { company: 'ASUCD Pantry', role: 'IT Coordinator', date: 'Oct 2024 - Jul 2025', description: 'Launched a volunteer management system for the Pantry, enabling 500+ students and campus entities to sign up, manage shifts, and coordinate operations end-to-end.', logo: asucd.src },
+              { company: 'UC Davis Graduate School of Management', role: 'Undergraduate Researcher', date: 'Sep 2024 - Jun 2025', description: 'Worked in Behavioral Research Lab under Dr. Stephen Garcia.', logo: Equip.src },
+              { company: 'Tomorrows AI', role: 'Software Engineer Intern', date: 'Sep 2024 - Dec 2024', description: 'Developed scalable database system with Flask & SQL. Built a Next.js front-end integrated with back-end systems. Engineered web scraping for news articles. Helped set up the SEO for pages.', logo: tomorrows_ai.src },
+              { company: 'Headstarter AI', role: 'Software Engineering Fellow', date: 'Jul 2024 - Sep 2024', description: 'Developed web applications leveraging React for front-end development, Node.js for server-side logic, and Firebase for real-time database management and authentication. Actively participated in fire chats with AI professionals, gaining valuable insights into the latest developments and opportunities in AI.', logo: headstarter.src },
+              { company: 'Codelab', role: 'Software Developer', date: 'Mar 2024 - Jun 2024', description: 'Collaborated with a team to develop a web application combining features of Quizlet and Anki. Built a flashcard management platform using TypeScript and React JS. Designed and implemented database schema using PostgreSQL for optimized data retrieval. Built controllers, utilities, and API endpoints to handle user interactions and data flow.', logo: codelab.src },
+              { company: 'ASUCD Pantry', role: 'Software Developer', date: 'Sep 2023 - Mar 2024', description: 'Collaborated with a team of developers at UC Davis Pantry to build a user-friendly e-commerce platform. Used Django, PostgreSQL, and front-end technologies to optimize performance, manage data flow, and enhance the overall user experience.', logo: asucd.src },
+              { company: 'Global Grid 4 Learning', role: 'Project Intern', date: 'Jun 2022 - Sep 2022', description: 'Engaged in hands-on work with Data Integration techniques on the CSPA Platform, specializing in user authentication and single sign-on platforms. Deployed applications on the CSPA platform, gaining exposure to the full software application lifecycle from design to deployment.', logo: gg4l.src },
             ].map((job, index) => (
               <motion.div
                 key={index}
@@ -336,7 +359,9 @@ export function PortfolioPage() {
       </div>
       <section id="leadership" className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-blue-400 mb-12 text-center">Leadership Journey</h2>
+            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-4 text-center">Beyond the Code</p>
+            <h2 className="text-4xl font-bold text-white mb-2 text-center">Leadership Journey</h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-12 rounded-full"></div>
             <div className="relative">
               {/* Curved path */}
               <svg className="absolute left-1/2 transform -translate-x-1/2 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -394,15 +419,17 @@ export function PortfolioPage() {
 
         
 
-    <section id="projects" className="py-20 px-6 flex justify-center items-center">
+    <section id="projects" className="py-24 px-6 flex justify-center items-center">
       <motion.div
         className="max-w-6xl mx-auto"
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 3 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <h2 className="text-4xl font-bold text-blue-400 mb-12 text-center">Projects</h2>
+        <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-4 text-center">What I've Built</p>
+        <h2 className="text-4xl font-bold text-white mb-2 text-center">Projects</h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-12 rounded-full"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -478,64 +505,55 @@ export function PortfolioPage() {
        
         
 
-        <section id="contact" className={`py-20 px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}`}>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-blue-400 mb-8">Contact Me</h2>
-            <div className="flex flex-col md:flex-row gap-8">
-              <form className="w-full md:w-2/3 space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    className={`w-full p-2 rounded-md border ${theme === 'dark' ? 'border-gray-600 bg-gray-700 text-white' : 'border-gray-300 bg-white text-gray-900'}`}
-                    required
-                  />
+        <section id="contact" className="relative py-32 px-6 overflow-hidden bg-gray-900">
+          {/* Background orbs */}
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-700 rounded-full opacity-10 blur-3xl -translate-y-1/2 pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-700 rounded-full opacity-10 blur-3xl translate-y-1/2 pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-blue-500 rounded-full opacity-5 blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+
+          <div className="relative max-w-4xl mx-auto text-center">
+            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-5">Get In Touch</p>
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Interested in Product<br className="hidden sm:block" /> and Tech?{' '}
+              <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                Let's chat.
+              </span>
+            </h2>
+            <p className="text-gray-400 text-xl mb-14 max-w-xl mx-auto">
+              Always open to new opportunities, collaborations, and good conversations.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+              <motion.a
+                href="mailto:svagarwal@ucdavis.edu"
+                className="group flex flex-col items-center gap-3 bg-gray-800/60 backdrop-blur border border-gray-700 hover:border-blue-500 rounded-2xl px-12 py-8 transition-all duration-300 cursor-pointer"
+                whileHover={{ y: -6 }}
+              >
+                <div className="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
+                  <Mail size={26} className="text-blue-400" />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    className={`w-full p-2 rounded-md border ${theme === 'dark' ? 'border-gray-600 bg-gray-700 text-white' : 'border-gray-300 bg-white text-gray-900'}`}
-                    required
-                  />
+                <span className="text-white font-semibold text-lg">Email</span>
+                <span className="text-gray-400 text-sm">svagarwal@ucdavis.edu</span>
+              </motion.a>
+
+              <motion.a
+                href="https://www.linkedin.com/in/sambhavagarwal1/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center gap-3 bg-gray-800/60 backdrop-blur border border-gray-700 hover:border-blue-500 rounded-2xl px-12 py-8 transition-all duration-300 cursor-pointer"
+                whileHover={{ y: -6 }}
+              >
+                <div className="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
+                  <Linkedin size={26} className="text-blue-400" />
                 </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className={`w-full p-2 rounded-md border ${theme === 'dark' ? 'border-gray-600 bg-gray-700 text-white' : 'border-gray-300 bg-white text-gray-900'}`}
-                    required
-                  ></textarea>
-                </div>
-                <motion.button
-                  type="submit"
-                  className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Send Message
-                </motion.button>
-              </form>
-              <div className="w-full md:w-1/3 space-y-4">
-                <div className="flex items-center">
-                  <Mail size={24} className="mr-2 text-blue-400" />
-                  <a href="mailto:svagarwal@ucdavis.edu" className="hover:text-blue-400 transition-colors">svagarwal@ucdavis.edu</a>
-                </div>
-                <div className="flex items-center">
-                  <Phone size={24} className="mr-2 text-blue-400" />
-                  <a href="tel:+1234567890" className="hover:text-blue-400 transition-colors">+1 (408) 516-6572</a>
-                </div>
-              </div>
+                <span className="text-white font-semibold text-lg">LinkedIn</span>
+                <span className="text-gray-400 text-sm">sambhavagarwal1</span>
+              </motion.a>
             </div>
+          </div>
+
+          <div className="relative border-t border-gray-800 pt-8 text-center text-gray-600 text-sm">
+            <p>© 2025 Sambhav Agarwal · Built with Next.js & Tailwind CSS</p>
           </div>
         </section>
       </main>
